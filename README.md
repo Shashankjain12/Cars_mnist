@@ -16,3 +16,8 @@ MNIST Dataset ML model Predictions
 ### ARCHITECTURE
 
 <img src="ML_architecture.png"></img>
+
+
+#### Request format using dockerfile
+
+<img src="POST_request.png"></img>
