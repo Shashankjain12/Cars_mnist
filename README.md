@@ -13,6 +13,19 @@ MNIST Dataset ML model Predictions
 
 5. The client can be a web application, mobile application or any other software that can send HTTP request to the flask server.
 
+#### Steps to run the project
+
+> docker build -t mnist_model:1.0.0 .
+> docker run -it -p 8010:8080 --name mnist mnist_model
+
+To use kubernetes pods
+
+> kubectl apply -f mnist_service.yaml
+> kubectl apply -f mnist_deployment.yaml
+> kubectl port-forward mnist-flask-deployment-679b59477c-zl86m 8080:8080
+
+
+
 ### ARCHITECTURE
 
 <img src="ML_architecture.png"></img>

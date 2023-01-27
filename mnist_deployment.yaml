@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mnist-flask-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mnist-flask
+  template:
+    metadata:
+      labels:
+        app: mnist-flask
+    spec:
+      containers:
+      - name: mnist-flask
+        image: mnist_model:1.0.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        command: ["python"]
+        args: ["app.py"]
